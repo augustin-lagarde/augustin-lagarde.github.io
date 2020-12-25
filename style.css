@@ -1,0 +1,321 @@
+/*
+* Made by Erik Terwan
+* 24th of November 2015
+* MIT License
+*
+* If you are thinking of using this in
+* production code, beware of the browser
+* prefixes.
+*/
+
+/*
+* Found this nice color palette:
+* http://opencolor.tools/palettes/wesanderson/
+*/
+
+/*
+* Side menu sources:
+* https://stackoverflow.com/questions/50789489/close-hamburger-menu-when-click-on-anchor-links-on-same-page
+* https://www.sitepoint.com/pure-css-off-screen-navigation-menu/
+*/
+
+/*****************************************************
+* - - - - - - - - - - OVERALL PAGE - - - - - - - - - -
+*****************************************************/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /* height: 100%; */
+  /* width: 100%; */
+  /* max-width: 100%; */
+  /* Without this, the body has excess horizontal scroll when the menu is open */
+  overflow-x: hidden;
+}
+
+#logo {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 30px;
+  line-height: 30px;
+}
+
+body {
+  background: #232323;
+  color: #cdcdcd;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+/*****************************************************
+* - - - - - - - - - NAVIGATION MENU - - - - - - - - -
+*****************************************************/
+
+#menu {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-height: 100%;
+  padding: 2rem;
+  z-index: 2;
+  -webkit-user-select: none;
+  user-select: none;
+  background: #e6e6e6;
+}
+
+#menuToggle {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+}
+#menu input {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+  /* hide this */
+  z-index: 3;
+  /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+/* Just a quick hamburger */
+#menu span {
+  display: block;
+  position: relative;
+  /* top: 0px; */
+  right: 0px;
+  width: 30px;
+  height: 4px;
+  margin-bottom: 5px;
+  /* margin: 0 0 5px auto; */
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 2;
+  /* transform-origin: 4px 0px; */
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+/* Transform all the slices of hamburger into a crossmark */
+#menu input:checked ~ span:nth-of-type(1) {
+  /* transform: rotate(45deg) translate(6.75px, 6px); */
+}
+/* But let's hide the middle one */
+#menu input:checked ~ span:nth-of-type(2) {
+  /* opacity: 0; */
+  /* transform: rotate(0deg) scale(0.2, 0.2); */
+}
+/* Oh yeah and the last one should go the other direction */
+#menu input:checked ~ span:nth-of-type(3) {
+  /* transform: rotate(-45deg) translate(6.75px, -6px); */
+}
+
+#menu input:checked + span {
+  /* right: 215px; */
+}
+
+#menu input:checked ~ .site-wrap {
+  /* right: 200px; */
+  /* box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5); */
+}
+
+/* Make this absolute positioned at the top left of the screen */
+.navigation {
+  /* width: 100%; */
+  /* height: 100%; */
+  position: relative;
+  top: 30px;
+  /* right: 0; */
+  /* bottom: 0; */
+  /* left: 0; */
+  /* z-index: 0; */
+
+  /* float: right; */
+  /* position: fixed; */
+  /* width: 300px; */
+  /* margin: -50px -15px 0px 0px; */
+  /* margin-top: -40px; */
+  /* padding: 2.5rem; */
+  /* padding-top: 45px; */
+  /* padding-bottom: auto; */
+
+  /* background: #ededed; */
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  /* transform-origin: 0% 0%; */
+  /* transform: translate(110%, 0); */
+
+  /* transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); */
+
+  /* critical sizing and position styles */
+  /* width: 100%; */
+  /* height: 100%; */
+  /* position: fixed; */
+  /* top: 0; */
+  /* right: 0; */
+  /* bottom: 0; */
+  /* left: 0; */
+  z-index: 0;
+
+  /* non-critical appearance styles */
+  list-style: none;
+  /* background: #111; */
+}
+/* And let's slide it in from the left */
+#menu input:checked ~ .navigation {
+  /* transform: none; */
+}
+.navigation li {
+  /* width: 200px; */
+  /* list-style-type: none; */
+  padding: 10px 10px;
+  /* font-size: 1.25rem; */
+
+  /* non-critical appearance styles */
+  /* width: 200px; */
+  /* border-top: 1px solid #111; */
+  /* border-bottom: 1px solid #000; */
+}
+.navigation a {
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+  font-size: 1.3rem;
+
+  /* non-critical appearance styles */
+  /* display: block; */
+  /* padding: 1em; */
+  /* background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  ); */
+  /* color: white; */
+  /* font-size: 1.2em; */
+  /* text-decoration: none; */
+  /* transition: color 0.2s, background 0.5s; */
+}
+.navigation a:hover {
+  color: #dbb165;
+
+  /* color: #c74438; */
+  /* background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(75, 20, 20, 0.65) 100%
+  ); */
+}
+
+/* Site Wrapper - Everything that isn't navigation */
+.site-wrap {
+  /* Critical position and size styles */
+  /* min-height: 100%; */
+  /* min-width: 100%; */
+  /* position: relative; */
+  /* top: 0; */
+  /* bottom: 100%; */
+  /* left: 0; */
+  /* z-index: 1; */
+
+  /* non-critical apperance styles */
+  padding: 4em;
+  /* background-image: linear-gradient(
+      135deg,
+      rgb(254, 255, 255) 0%,
+      rgb(221, 241, 249) 35%,
+      rgb(160, 216, 239) 100%
+    );
+    background-size: 200%; */
+}
+
+/*****************************************************
+  * - - - - - - - - - - - CONTENT - - - - - - - - - - -
+  *****************************************************/
+
+/* BEYOND THIS LINE IS PREVIOUS CSS BY ME*/
+/* ------------------------------------------------------ */
+/* General */
+/*
+  html {
+    font-size: 62.5%;
+  }
+  body {
+    font-family: Myriad Pro light;
+    font-size: 1.6rem;
+  }
+  .container {
+    width: 80%;
+    margin: auto;
+  }
+  */
+/*
+  h2 {
+    font-family: "muli", sans-serif;
+    font-style: bold;
+  }
+  */
+/* Header*/
+/*
+  header {
+    background: royalblue;
+  }
+  header #logo {
+    display: inline-block;
+    font-size: 15rem;
+    font-family: muli, sans-serif;
+  }
+  header li {
+    display: inline;
+  }
+  header nav {
+    float: right;
+    margin: auto auto auto auto;
+  }
+  header nav a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1rem 1rem 1rem;
+  }
+  */
+/* About */
+/*
+  #About {
+    background: salmon;
+    height: auto;
+  }
+  #About img {
+    display: inline-block;
+    float: left;
+    border-radius: 100%;
+    max-width: 10rem;
+    padding: 1rem 1rem 1rem 1rem;
+  }
+  #About p {
+    padding: 1rem 1rem 1rem 1rem;
+  }
+  */
+/* Showcase */
+/*
+  #Showcase {
+    background: seagreen;
+  }
+  */
+/* Future */
+/*
+  #Future {
+    background: thistle;
+  }
+  */
