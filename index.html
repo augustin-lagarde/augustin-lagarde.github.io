@@ -16,29 +16,28 @@
   <body>
     <header>
       <h1 id="logo">AL</h1>
-      <div id="menu">
-        <div id="menuToggle">
-          <!--
-      A fake / hidden checkbox is used as click reciever,
-      so you can use the :checked selector on it.
-      -->
-          <input type="checkbox" />
-          <!--
-      Some spans to act as a hamburger.
-      -->
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <ul class="navigation">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Watching</a></li>
-          <li><a href="#">Reading</a></li>
-          <li><a href="#">Going</a></li>
-        </ul>
-      </div>
     </header>
+    <!--
+        A fake / hidden checkbox is used as click reciever,
+        so you can use the :checked selector on it.
+        -->
+    <input type="checkbox" id="menuToggle" />
+    <!--
+          Some spans to act as a hamburger.
+          -->
+    <div id="menuIcon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="navigation">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Watching</a></li>
+      <li><a href="#">Reading</a></li>
+      <li><a href="#">Going</a></li>
+    </ul>
+
     <div class="site-wrap">
       <section id="About">
         <div class="container">
