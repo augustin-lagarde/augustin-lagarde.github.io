@@ -205,26 +205,40 @@ h2 {
   z-index: 1;
 }
 
-/* BEYOND THIS LINE IS PREVIOUS CSS BY ME*/
-/* ------------------------------------------------------ */
-
 /* About */
-/*
-  #About {
-    background: salmon;
-    height: auto;
-  }
-  #About img {
-    display: inline-block;
-    float: left;
-    border-radius: 100%;
-    max-width: 10rem;
-    padding: 1rem 1rem 1rem 1rem;
-  }
-  #About p {
-    padding: 1rem 1rem 1rem 1rem;
-  }
-  */
+
+#About {
+  /* background: salmon; */
+  min-height: 170px;
+}
+#About img {
+  display: inline-block;
+  float: left;
+  border-radius: 100%;
+  max-height: 170px;
+  /* max-width: 10rem; */
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+#About2 p {
+  padding: 1rem 1rem 1rem 1rem;
+}
+#About2 {
+  /* background: salmon; */
+  min-height: 170px;
+}
+#About2 img {
+  display: inline-block;
+  float: right;
+  border-radius: 100%;
+  max-height: 170px;
+  /* max-width: 10rem; */
+  padding: 1rem 1rem 1rem 1rem;
+}
+#About2 p {
+  padding: 1rem 1rem 1rem 1rem;
+}
+
 /* Showcase */
 /*
   #Showcase {
