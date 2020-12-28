@@ -47,6 +47,9 @@ h2 {
   color: #b5966d;
   margin-top: 0.5rem;
 }
+p {
+  padding: 1rem 0;
+}
 
 /*****************************************************
 * - - - - - - - - - NAVIGATION MENU - - - - - - - - -
@@ -205,14 +208,23 @@ h2 {
   z-index: 1;
 }
 
-/* About */
+/*****************************************************
+* - - - - - - - - - - - - INDEX - - - - - - - - - - -
+*****************************************************/
+
+#Welcome p {
+  padding-top: 0;
+}
+
+/*****************************************************
+* - - - - - - - - - - - - ABOUT - - - - - - - - - - - 
+*****************************************************/
 
 #About {
   /* background: salmon; */
   min-height: 170px;
 }
 #About img {
-  display: inline-block;
   float: left;
   border-radius: 100%;
   max-height: 170px;
@@ -220,15 +232,15 @@ h2 {
   padding: 1rem 1rem 1rem 1rem;
 }
 
-#About2 p {
-  padding: 1rem 1rem 1rem 1rem;
+#About p {
+  padding: 1rem 0 1rem 0;
 }
+
 #About2 {
   /* background: salmon; */
   min-height: 170px;
 }
 #About2 img {
-  display: inline-block;
   float: right;
   border-radius: 100%;
   max-height: 170px;
@@ -236,7 +248,7 @@ h2 {
   padding: 1rem 1rem 1rem 1rem;
 }
 #About2 p {
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 1rem 0 1rem 0;
 }
 
 /* Showcase */
