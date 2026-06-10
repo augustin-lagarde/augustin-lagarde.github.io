@@ -50,6 +50,13 @@ h2 {
 p {
   padding: 1rem 0;
 }
+a { 
+  color: #b5966d; 
+  text-decoration: none;
+}
+a:hover {
+  color: #edcb64;
+}
 
 /*****************************************************
 * - - - - - - - - - NAVIGATION MENU - - - - - - - - -
